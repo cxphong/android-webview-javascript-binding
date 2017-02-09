@@ -47,5 +47,14 @@
             android:textSize="20sp"/>
     </LinearLayout>
 
+    <SeekBar
+        android:thumbOffset="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:thumb="@drawable/thumb"
+        android:splitTrack="false"
+        android:progressDrawable="@drawable/progress_dr"
+        />
+
 
 </RelativeLayout>
