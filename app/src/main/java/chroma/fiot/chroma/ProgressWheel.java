@@ -236,6 +236,7 @@ public class ProgressWheel extends View {
     private void parseAttributes(TypedArray a) {
         barWidth = (int) a.getDimension(R.styleable.ProgressWheel_pwBarWidth, barWidth);
         rimWidth = (int) a.getDimension(R.styleable.ProgressWheel_pwRimWidth, rimWidth);
+
         spinSpeed = (int) a.getDimension(R.styleable.ProgressWheel_pwSpinSpeed, spinSpeed);
         barLength = (int) a.getDimension(R.styleable.ProgressWheel_pwBarLength, barLength);
 
