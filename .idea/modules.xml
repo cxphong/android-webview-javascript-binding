@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Chroma.iml" filepath="$PROJECT_DIR$/Chroma.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/carousel/carousel.iml" filepath="$PROJECT_DIR$/carousel/carousel.iml" />
     </modules>
   </component>
 </project>

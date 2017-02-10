@@ -2,6 +2,7 @@ package chroma.fiot.chroma;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -29,7 +30,12 @@ import android.widget.Toast;
 import com.suke.widget.SwitchButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import fr.rolandl.carousel.Carousel;
+import fr.rolandl.carousel.CarouselAdapter;
+import fr.rolandl.carousel.CarouselBaseAdapter;
+import fr.rolandl.carousel.CarouselItem;
 import ru.igla.widget.AutoSizeTextView;
 
 public class MainActivity extends Activity {
@@ -82,9 +88,9 @@ public class MainActivity extends Activity {
         TextView leftSeekbar = (TextView) findViewById(R.id.tv_0_percent);
         TextView rightSeekbar = (TextView) findViewById(R.id.tv_100_percent);
 
-        Typeface tf = Typeface.createFromAsset(getAssets(),"Sansation_Regular.ttf");
-        progress.setTypeface(tf,Typeface.NORMAL);
-        battery.setTypeface(tf,Typeface.NORMAL);
+        Typeface tf = Typeface.createFromAsset(getAssets(), "Sansation_Regular.ttf");
+        progress.setTypeface(tf, Typeface.NORMAL);
+        battery.setTypeface(tf, Typeface.NORMAL);
         chooseMode.setTypeface(tf, Typeface.NORMAL);
         tvFlow.setTypeface(tf, Typeface.NORMAL);
         tvFill.setTypeface(tf, Typeface.NORMAL);
@@ -239,7 +245,8 @@ public class MainActivity extends Activity {
         Log.i(TAG, "clickFill: ");
 
         selectedFill();
-        unSelectedFlow();;
+        unSelectedFlow();
+        ;
         unSelectedBurst();
     }
 
@@ -273,14 +280,14 @@ public class MainActivity extends Activity {
                 view = v;
 
                 image = (ImageView) v.findViewById(R.id.no_image);
-                name = (TextView)v.findViewById(R.id.no_name);
+                name = (TextView) v.findViewById(R.id.no_name);
                 color = v.findViewById(R.id.no_color);
                 sw = (SwitchButton) v.findViewById(R.id.no_sw);
 
                 v.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, (Integer)v.getTag() + "", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, (Integer) v.getTag() + "", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -299,7 +306,7 @@ public class MainActivity extends Activity {
             View v = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.notification, parent, false);
 
-            v.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mRecyclerView.getHeight()/2));
+            v.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mRecyclerView.getHeight() / 2));
             // set the view's size, margins, paddings and layout parameters
 
             ViewHolder vh = new ViewHolder(v);
@@ -315,10 +322,10 @@ public class MainActivity extends Activity {
 
             holder.image.setBackgroundResource(no.imageResourceId);
             holder.name.setText(no.name);
-            Typeface tf = Typeface.createFromAsset(getAssets(),"Sansation_Regular.ttf");
-            holder.name.setTypeface(tf,Typeface.NORMAL);
+            Typeface tf = Typeface.createFromAsset(getAssets(), "Sansation_Regular.ttf");
+            holder.name.setTypeface(tf, Typeface.NORMAL);
 
-            GradientDrawable bgShape = (GradientDrawable)holder.color.getBackground();
+            GradientDrawable bgShape = (GradientDrawable) holder.color.getBackground();
             bgShape.setColor(no.color);
 
             holder.sw.setChecked(no.enabled);
@@ -338,11 +345,11 @@ public class MainActivity extends Activity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.notification_dialog);
 
-        Typeface tf = Typeface.createFromAsset(getAssets(),"Sansation_Regular.ttf");
-        ((TextView)dialog.findViewById(R.id.tv_add_notification)).setTypeface(tf, Typeface.NORMAL);
-        ((TextView)dialog.findViewById(R.id.tv_choose_notification_icon)).setTypeface(tf, Typeface.NORMAL);
-        ((TextView)dialog.findViewById(R.id.tv_choose_notification_color)).setTypeface(tf, Typeface.NORMAL);
-        ((Button)dialog.findViewById(R.id.bt_add_notification)).setTypeface(tf, Typeface.NORMAL);
+        Typeface tf = Typeface.createFromAsset(getAssets(), "Sansation_Regular.ttf");
+        ((TextView) dialog.findViewById(R.id.tv_add_notification)).setTypeface(tf, Typeface.NORMAL);
+        ((TextView) dialog.findViewById(R.id.tv_choose_notification_icon)).setTypeface(tf, Typeface.NORMAL);
+        ((TextView) dialog.findViewById(R.id.tv_choose_notification_color)).setTypeface(tf, Typeface.NORMAL);
+        ((Button) dialog.findViewById(R.id.bt_add_notification)).setTypeface(tf, Typeface.NORMAL);
         ImageButton close = (ImageButton) dialog.findViewById(R.id.dialog_bt_close);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -442,6 +449,37 @@ public class MainActivity extends Activity {
         });
 
 
+        final Carousel carousel = (Carousel) dialog.findViewById(R.id.carousel);
+        final List<ImageView> photos = new ArrayList<>();
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+        photos.add(new ImageView(MainActivity.this));
+
+        final CarouselAdapter adapter = new ColorAdapter(this, photos);
+        carousel.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+        carousel.setOnItemClickListener(new CarouselBaseAdapter.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(CarouselBaseAdapter<?> carouselBaseAdapter, View view, int position, long id) {
+                carousel.scrollToChild(position);
+            }
+
+        });
+
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialog.getWindow().getAttributes());
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
@@ -459,4 +497,18 @@ public class MainActivity extends Activity {
     }
 
 }
+
+class ColorAdapter extends CarouselAdapter<ImageView> {
+
+    public ColorAdapter(Context context, List<ImageView> photos) {
+        super(context, photos);
+    }
+
+    @Override
+    public CarouselItem<ImageView> getCarouselItem(Context context) {
+        return new ColorItem(context);
+    }
+
+}
+
 

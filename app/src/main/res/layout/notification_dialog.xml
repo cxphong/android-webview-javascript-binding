@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="972"
-        android:weightSum="888"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="888">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,8 +35,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Add notification"
-                        android:textSize="14sp"
-                        android:textColor="@color/colorText"/>
+                        android:textColor="@color/colorText"
+                        android:textSize="14sp" />
 
                     <View
                         android:layout_width="50dp"
@@ -48,13 +48,12 @@
 
                 <ImageButton
                     android:id="@+id/dialog_bt_close"
-                    android:layout_alignParentRight="true"
-                    android:scaleType="fitCenter"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/cancel_hp"
-                    />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cancel_hp" />
 
             </RelativeLayout>
 
@@ -64,7 +63,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="78"/>
+            android:layout_weight="78" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,8 +87,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Choose notification icon"
-                        android:textSize="@dimen/text_size"
-                        android:textColor="@color/colorText"/>
+                        android:textColor="@color/colorText"
+                        android:textSize="@dimen/text_size" />
 
                     <View
                         android:layout_width="50dp"
@@ -109,8 +108,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="590"
-            android:weightSum="6"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="6">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -123,13 +122,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="5"
-                android:weightSum="1024"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="1024">
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="112"/>
+                    android:layout_weight="112" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -143,134 +142,62 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                            <android.support.percent.PercentRelativeLayout
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="match_parent"
-                                xmlns:android="http://schemas.android.com/apk/res/android"
-                                xmlns:app="http://schemas.android.com/apk/res-auto">
-
-                                <ImageView
-                                    android:id="@+id/img_sms"
-                                    app:layout_widthPercent="75%"
-                                    app:layout_heightPercent="75%"
-                                    android:src="@drawable/sms"
-                                    android:layout_centerInParent="true"/>
-
-                            </android.support.percent.PercentRelativeLayout>
-
-                        <android.support.percent.PercentRelativeLayout
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/img_sms"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/sms"
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
 
                             <ImageView
                                 android:id="@+id/img_call"
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
+                                android:layout_centerInParent="true"
                                 android:src="@drawable/call_misscall"
-                                android:layout_centerInParent="true"/>
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
 
                         </android.support.percent.PercentRelativeLayout>
 
-                        <android.support.percent.PercentRelativeLayout
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
+                            android:layout_weight="1">
 
                             <ImageView
                                 android:id="@+id/img_facebook"
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
+                                android:layout_centerInParent="true"
                                 android:src="@drawable/facebook"
-                                android:layout_centerInParent="true"/>
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
 
                         </android.support.percent.PercentRelativeLayout>
 
-                        <android.support.percent.PercentRelativeLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"
-                        xmlns:android="http://schemas.android.com/apk/res/android"
-                        xmlns:app="http://schemas.android.com/apk/res-auto">
-
-                        <ImageView
-                            app:layout_widthPercent="75%"
-                            app:layout_heightPercent="75%"
-                            android:src="@drawable/circle"
-                            android:layout_centerInParent="true"/>
-
-                    </android.support.percent.PercentRelativeLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <android.support.percent.PercentRelativeLayout
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
+                            android:layout_weight="1">
 
                             <ImageView
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
+                                android:layout_centerInParent="true"
                                 android:src="@drawable/circle"
-                                android:layout_centerInParent="true"/>
-
-                        </android.support.percent.PercentRelativeLayout>
-
-                        <android.support.percent.PercentRelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
-
-                            <ImageView
-                                app:layout_widthPercent="75%"
                                 app:layout_heightPercent="75%"
-                                android:src="@drawable/circle"
-                                android:layout_centerInParent="true"/>
-
-                        </android.support.percent.PercentRelativeLayout>
-
-                        <android.support.percent.PercentRelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
-
-                            <ImageView
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
-                                android:src="@drawable/circle"
-                                android:layout_centerInParent="true"/>
-
-                        </android.support.percent.PercentRelativeLayout>
-
-                        <android.support.percent.PercentRelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
-
-                            <ImageView
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
-                                android:src="@drawable/circle"
-                                android:layout_centerInParent="true"/>
+                                app:layout_widthPercent="75%" />
 
                         </android.support.percent.PercentRelativeLayout>
 
@@ -282,63 +209,123 @@
                         android:layout_weight="1"
                         android:orientation="horizontal">
 
-                        <android.support.percent.PercentRelativeLayout
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
+                            android:layout_weight="1">
 
                             <ImageView
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
+                                android:layout_centerInParent="true"
                                 android:src="@drawable/circle"
-                                android:layout_centerInParent="true"/>
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
 
                         </android.support.percent.PercentRelativeLayout>
 
-                        <android.support.percent.PercentRelativeLayout
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
+                            android:layout_weight="1">
 
                             <ImageView
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
+                                android:layout_centerInParent="true"
                                 android:src="@drawable/circle"
-                                android:layout_centerInParent="true"/>
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
 
                         </android.support.percent.PercentRelativeLayout>
 
-                        <android.support.percent.PercentRelativeLayout
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
+                            android:layout_weight="1">
 
                             <ImageView
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
+                                android:layout_centerInParent="true"
                                 android:src="@drawable/circle"
-                                android:layout_centerInParent="true"/>
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
 
                         </android.support.percent.PercentRelativeLayout>
 
-                        <android.support.percent.PercentRelativeLayout
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:app="http://schemas.android.com/apk/res-auto">
+                            android:layout_weight="1">
 
                             <ImageView
-                                app:layout_widthPercent="75%"
-                                app:layout_heightPercent="75%"
+                                android:layout_centerInParent="true"
                                 android:src="@drawable/circle"
-                                android:layout_centerInParent="true"/>
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/circle"
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/circle"
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/circle"
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/circle"
+                                app:layout_heightPercent="75%"
+                                app:layout_widthPercent="75%" />
 
                         </android.support.percent.PercentRelativeLayout>
 
@@ -349,7 +336,7 @@
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="112"/>
+                    android:layout_weight="112" />
 
             </LinearLayout>
 
@@ -364,125 +351,118 @@
 
     </LinearLayout>
 
-    <android.support.percent.PercentRelativeLayout
+    <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_weight="684"
         android:layout_height="0dp"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:layout_weight="684">
 
-        <RelativeLayout
-            android:id="@+id/rl_1"
-            app:layout_widthPercent="100%"
-            app:layout_heightPercent="16%"
-            android:background="#1B2126">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tv_choose_notification_color"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Choose color of notification"
-                    android:textSize="@dimen/text_size"
-                    android:textColor="@color/colorText"/>
-
-                <View
-                    android:layout_width="50dp"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#27C95C" />
-
-            </LinearLayout>
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_2"
-            android:layout_below="@id/rl_1"
-            app:layout_widthPercent="100%"
-            app:layout_heightPercent="44%"
-            android:background="#1B2126">
-
-            <LinearLayout
-                android:background="#ffff00"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="16dp"
-                android:orientation="vertical">
-
-            </LinearLayout>
-
-
-        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        app:layout_heightPercent="16%"
+        app:layout_widthPercent="100%"
+        android:background="#1B2126">
 
         <LinearLayout
-            android:layout_below="@id/rl_2"
-            app:layout_widthPercent="100%"
-            app:layout_heightPercent="60%"
-            android:background="#1B2126">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_choose_notification_color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose color of notification"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/text_size" />
 
             <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="244"
-                android:background="@android:color/transparent">
-            </View>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="588"
-                android:background="#1B2126">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true">
-
-                    <Button
-                        android:id="@+id/bt_tmp"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_centerInParent="true"
-                        android:text="Add more"
-                        android:textAllCaps="false"
-                        android:background="@drawable/button_tmp_bg"/>
-
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginLeft="0.2dp"
-                        android:text="Add notification"
-                        android:textSize="@dimen/text_size"
-                        android:textColor="@color/colorText"
-                        android:textAllCaps="false"
-                        android:background="@drawable/button_bg"
-                        android:id="@+id/bt_add_notification"
-                        />
-                </RelativeLayout>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="244"
-                android:background="@android:color/transparent">
-            </View>
-
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:background="#27C95C" />
 
         </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_2"
+        app:layout_heightPercent="44%"
+        app:layout_widthPercent="100%"
+        android:layout_below="@id/rl_1"
+        android:background="#1B2126">
+
+    <fr.rolandl.carousel.Carousel
+        android:id="@+id/carousel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="16dp"
+        android:animationDuration="200"/>
+
+    </RelativeLayout>
+
+<LinearLayout
+android:layout_below="@id/rl_2"
+app:layout_widthPercent="100%"
+app:layout_heightPercent="60%"
+android:background="#1B2126">
+
+<View
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="244"
+    android:background="@android:color/transparent"></View>
+
+<RelativeLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="588"
+    android:background="#1B2126">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/bt_tmp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:text="Add more"
+            android:textAllCaps="false"
+            android:background="@drawable/button_tmp_bg" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="0.2dp"
+            android:text="Add notification"
+            android:textSize="@dimen/text_size"
+            android:textColor="@color/colorText"
+            android:textAllCaps="false"
+            android:background="@drawable/button_bg"
+            android:id="@+id/bt_add_notification" />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+<View
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="244"
+    android:background="@android:color/transparent"></View>
+
+
+</LinearLayout>
 
     </android.support.percent.PercentRelativeLayout>
 
 
-</LinearLayout>
+    </LinearLayout>
