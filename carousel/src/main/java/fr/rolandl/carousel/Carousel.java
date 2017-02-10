@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.animation.Transformation;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -296,7 +297,8 @@ public final class Carousel
 
     final float x = -(diameter / 2 * android.util.FloatMath.sin(angleOffset)) + diameter / 2 - child.getWidth() / 2;
     final float z = diameter / 2 * (1.0f - android.util.FloatMath.cos(angleOffset));
-    final float y = -getHeight() / 2 + z * android.util.FloatMath.sin(Carousel.THETA);
+    //final float y = -getHeight() / 2 + z * android.util.FloatMath.sin(Carousel.THETA);
+    final float y = 0;
 
     child.setItemX(x);
     child.setItemZ(z);
