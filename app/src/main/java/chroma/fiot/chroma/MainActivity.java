@@ -2,6 +2,7 @@ package chroma.fiot.chroma;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -340,6 +341,8 @@ public class MainActivity extends Activity {
         Typeface tf = Typeface.createFromAsset(getAssets(),"Sansation_Regular.ttf");
         ((TextView)dialog.findViewById(R.id.tv_add_notification)).setTypeface(tf, Typeface.NORMAL);
         ((TextView)dialog.findViewById(R.id.tv_choose_notification_icon)).setTypeface(tf, Typeface.NORMAL);
+        ((TextView)dialog.findViewById(R.id.tv_choose_notification_color)).setTypeface(tf, Typeface.NORMAL);
+        ((Button)dialog.findViewById(R.id.bt_add_notification)).setTypeface(tf, Typeface.NORMAL);
         ImageButton close = (ImageButton) dialog.findViewById(R.id.dialog_bt_close);
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -445,6 +448,14 @@ public class MainActivity extends Activity {
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         dialog.show();
         dialog.getWindow().setAttributes(lp);
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                isSMSZoomOut = false;
+                isFacebookZoomOut = false;
+                isCallZoomOut = false;
+            }
+        });
     }
 
 }
