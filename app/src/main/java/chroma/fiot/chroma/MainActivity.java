@@ -333,6 +333,7 @@ public class MainActivity extends Activity {
 
         Typeface tf = Typeface.createFromAsset(getAssets(),"Sansation_Regular.ttf");
         ((TextView)dialog.findViewById(R.id.tv_add_notification)).setTypeface(tf, Typeface.NORMAL);
+        ((TextView)dialog.findViewById(R.id.tv_choose_notification_icon)).setTypeface(tf, Typeface.NORMAL);
         ImageButton close = (ImageButton) dialog.findViewById(R.id.dialog_bt_close);
         close.setOnClickListener(new View.OnClickListener() {
             @Override

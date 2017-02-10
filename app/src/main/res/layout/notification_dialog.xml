@@ -61,10 +61,46 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="78"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="100">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1B2126">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_choose_notification_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Choose notification icon"
+                        android:textSize="@dimen/text_size"
+                        android:textColor="@color/colorText"/>
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#27C95C" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
 
 
         </LinearLayout>
@@ -72,8 +108,254 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="668">
+            android:layout_weight="590"
+            android:weightSum="6"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:weightSum="1024"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="112"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="800"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                            <android.support.percent.PercentRelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                                <ImageView
+                                    app:layout_widthPercent="75%"
+                                    app:layout_heightPercent="75%"
+                                    android:src="@drawable/sms"
+                                    android:layout_centerInParent="true"/>
+
+                            </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/call_misscall"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/facebook"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                        <ImageView
+                            app:layout_widthPercent="75%"
+                            app:layout_heightPercent="75%"
+                            android:src="@drawable/circle"
+                            android:layout_centerInParent="true"/>
+
+                    </android.support.percent.PercentRelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/circle"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/circle"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/circle"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/circle"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/circle"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/circle"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/circle"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                            <ImageView
+                                app:layout_widthPercent="75%"
+                                app:layout_heightPercent="75%"
+                                android:src="@drawable/circle"
+                                android:layout_centerInParent="true"/>
+
+                        </android.support.percent.PercentRelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="112"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+
+            </LinearLayout>
 
         </LinearLayout>
 
