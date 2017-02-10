@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -48,6 +50,10 @@ public class MainActivity extends Activity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<Notification> notifications = new ArrayList<>();
+
+    private boolean isSMSZoomOut;
+    private boolean isCallZoomOut;
+    private boolean isFacebookZoomOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -341,6 +347,97 @@ public class MainActivity extends Activity {
                 dialog.dismiss();
             }
         });
+
+        final Animation animZoomIn, animZoomOut;
+        animZoomIn = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.zoom_in);
+        animZoomOut = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.zoom_out);
+
+        final ImageView smsImg = (ImageView) dialog.findViewById(R.id.img_sms);
+        final ImageView callImg = (ImageView) dialog.findViewById(R.id.img_call);
+        final ImageView facebookImg = (ImageView) dialog.findViewById(R.id.img_facebook);
+
+        smsImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (!isSMSZoomOut) {
+                    smsImg.startAnimation(animZoomOut);
+
+                    if (isCallZoomOut) {
+                        callImg.startAnimation(animZoomIn);
+
+                        isCallZoomOut = !isCallZoomOut;
+                    }
+
+                    if (isFacebookZoomOut) {
+                        facebookImg.startAnimation(animZoomIn);
+
+                        isFacebookZoomOut = !isFacebookZoomOut;
+                    }
+                } else {
+                    smsImg.startAnimation(animZoomIn);
+                }
+
+                isSMSZoomOut = !isSMSZoomOut;
+            }
+        });
+
+
+        callImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (!isCallZoomOut) {
+                    callImg.startAnimation(animZoomOut);
+
+                    if (isSMSZoomOut) {
+                        smsImg.startAnimation(animZoomIn);
+
+                        isSMSZoomOut = !isSMSZoomOut;
+                    }
+
+                    if (isFacebookZoomOut) {
+                        facebookImg.startAnimation(animZoomIn);
+
+                        isFacebookZoomOut = !isFacebookZoomOut;
+                    }
+                } else {
+                    callImg.startAnimation(animZoomIn);
+                }
+
+                isCallZoomOut = !isCallZoomOut;
+            }
+        });
+
+        facebookImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (!isFacebookZoomOut) {
+                    facebookImg.startAnimation(animZoomOut);
+
+                    if (isCallZoomOut) {
+                        callImg.startAnimation(animZoomIn);
+
+                        isCallZoomOut = !isCallZoomOut;
+                    }
+
+                    if (isSMSZoomOut) {
+                        smsImg.startAnimation(animZoomIn);
+
+                        isSMSZoomOut = !isSMSZoomOut;
+                    }
+
+                } else {
+                    facebookImg.startAnimation(animZoomIn);
+                }
+
+                isFacebookZoomOut = !isFacebookZoomOut;
+            }
+        });
+
 
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         lp.copyFrom(dialog.getWindow().getAttributes());

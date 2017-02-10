@@ -151,6 +151,7 @@
                                 xmlns:app="http://schemas.android.com/apk/res-auto">
 
                                 <ImageView
+                                    android:id="@+id/img_sms"
                                     app:layout_widthPercent="75%"
                                     app:layout_heightPercent="75%"
                                     android:src="@drawable/sms"
@@ -166,6 +167,7 @@
                             xmlns:app="http://schemas.android.com/apk/res-auto">
 
                             <ImageView
+                                android:id="@+id/img_call"
                                 app:layout_widthPercent="75%"
                                 app:layout_heightPercent="75%"
                                 android:src="@drawable/call_misscall"
@@ -181,6 +183,7 @@
                             xmlns:app="http://schemas.android.com/apk/res-auto">
 
                             <ImageView
+                                android:id="@+id/img_facebook"
                                 app:layout_widthPercent="75%"
                                 app:layout_heightPercent="75%"
                                 android:src="@drawable/facebook"
