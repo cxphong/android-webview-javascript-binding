@@ -1,16 +1,31 @@
 package chroma.fiot.chroma;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.suke.widget.SwitchButton;
+
+import java.util.ArrayList;
 
 import ru.igla.widget.AutoSizeTextView;
 
@@ -28,6 +43,11 @@ public class MainActivity extends Activity {
 
     ViewGroup.LayoutParams selectedLayoutParams;
     RelativeLayout.LayoutParams unselectedLayoutParams;
+
+    RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private ArrayList<Notification> notifications = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +69,11 @@ public class MainActivity extends Activity {
         TextView brightness = (TextView) findViewById(R.id.tv_brightness);
         final TextView brightnessPercent = (TextView) findViewById(R.id.tv_brightness_percent);
         SeekBar brightnessSeekbar = (SeekBar) findViewById(R.id.brightness_seekbar);
+        Button addMore = (Button) findViewById(R.id.bt_add_more);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        TextView notification = (TextView) findViewById(R.id.tv_notifications);
+        TextView leftSeekbar = (TextView) findViewById(R.id.tv_0_percent);
+        TextView rightSeekbar = (TextView) findViewById(R.id.tv_100_percent);
 
         Typeface tf = Typeface.createFromAsset(getAssets(),"Sansation_Regular.ttf");
         progress.setTypeface(tf,Typeface.NORMAL);
@@ -59,6 +84,10 @@ public class MainActivity extends Activity {
         tvBurst.setTypeface(tf, Typeface.NORMAL);
         brightness.setTypeface(tf, Typeface.NORMAL);
         brightnessPercent.setTypeface(tf, Typeface.NORMAL);
+        addMore.setTypeface(tf, Typeface.NORMAL);
+        notification.setTypeface(tf, Typeface.NORMAL);
+        leftSeekbar.setTypeface(tf, Typeface.NORMAL);
+        rightSeekbar.setTypeface(tf, Typeface.NORMAL);
 
         brightnessSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -82,6 +111,25 @@ public class MainActivity extends Activity {
         unSelectedBurst();
         unSelectedFill();
         unSelectedFlow();
+
+        mRecyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        // specify an adapter (see also next example)
+        Notification no = new Notification();
+        no.imageResourceId = R.drawable.facebook;
+        no.name = "Facebook";
+        no.color = Color.parseColor("#ffff00");
+        no.enabled = true;
+
+        notifications.add(no);
+        notifications.add(no);
+
+        mAdapter = new MyAdapter(notifications);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     public static int dpToPx(int dp) {
@@ -194,6 +242,111 @@ public class MainActivity extends Activity {
         selectedBurst();
         unSelectedFlow();
         unSelectedFill();
+    }
+
+    class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+        private ArrayList<Notification> mDataset;
+
+        // Provide a reference to the views for each data item
+        // Complex data items may need more than one view per item, and
+        // you provide access to all the views for a data item in a view holder
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            // each data item is just a string in this case
+            public ImageView image;
+            public TextView name;
+            public View color;
+            public com.suke.widget.SwitchButton sw;
+
+
+            public View view;
+
+            public ViewHolder(View v) {
+                super(v);
+
+                view = v;
+
+                image = (ImageView) v.findViewById(R.id.no_image);
+                name = (TextView)v.findViewById(R.id.no_name);
+                color = v.findViewById(R.id.no_color);
+                sw = (SwitchButton) v.findViewById(R.id.no_sw);
+
+                v.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MainActivity.this, (Integer)v.getTag() + "", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        }
+
+        // Provide a suitable constructor (depends on the kind of dataset)
+        public MyAdapter(ArrayList<Notification> myDataset) {
+            mDataset = myDataset;
+        }
+
+        // Create new views (invoked by the layout manager)
+        @Override
+        public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                       int viewType) {
+            // create a new view
+            View v = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.notification, parent, false);
+
+            v.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mRecyclerView.getHeight()/2));
+            // set the view's size, margins, paddings and layout parameters
+
+            ViewHolder vh = new ViewHolder(v);
+            return vh;
+        }
+
+        // Replace the contents of a view (invoked by the layout manager)
+        @Override
+        public void onBindViewHolder(ViewHolder holder, int position) {
+            // - get element from your dataset at this position
+            // - replace the contents of the view with that element
+            Notification no = mDataset.get(position);
+
+            holder.image.setBackgroundResource(no.imageResourceId);
+            holder.name.setText(no.name);
+            Typeface tf = Typeface.createFromAsset(getAssets(),"Sansation_Regular.ttf");
+            holder.name.setTypeface(tf,Typeface.NORMAL);
+
+            GradientDrawable bgShape = (GradientDrawable)holder.color.getBackground();
+            bgShape.setColor(no.color);
+
+            holder.sw.setChecked(no.enabled);
+
+            holder.view.setTag(position);
+        }
+
+        // Return the size of your dataset (invoked by the layout manager)
+        @Override
+        public int getItemCount() {
+            return mDataset.size();
+        }
+    }
+
+    public void clickAddMore(View view) {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.notification_dialog);
+
+        Typeface tf = Typeface.createFromAsset(getAssets(),"Sansation_Regular.ttf");
+        ((TextView)dialog.findViewById(R.id.tv_add_notification)).setTypeface(tf, Typeface.NORMAL);
+        ImageButton close = (ImageButton) dialog.findViewById(R.id.dialog_bt_close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+        lp.copyFrom(dialog.getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.show();
+        dialog.getWindow().setAttributes(lp);
     }
 
 }

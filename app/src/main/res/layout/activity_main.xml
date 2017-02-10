@@ -189,6 +189,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Choose mode"
+                        android:textSize="@dimen/text_size"
                         android:textColor="@color/colorText"/>
 
                     <View
@@ -220,6 +221,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:text="Flow"
+                        android:textSize="@dimen/text_size"
                         android:textColor="@color/colorText"/>
 
                     <View
@@ -247,6 +249,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:text="Fill"
+                        android:textSize="@dimen/text_size"
                         android:textColor="@color/colorText" />
 
                     <View
@@ -274,6 +277,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:text="Burst"
+                        android:textSize="@dimen/text_size"
                         android:textColor="@color/colorText" />
 
                     <View
@@ -322,6 +326,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Brightness"
+                            android:textSize="@dimen/text_size"
                             android:textColor="@color/colorText" />
 
 
@@ -330,6 +335,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="0%"
+                            android:textSize="@dimen/text_size"
                             android:layout_marginLeft="8dp"
                             android:textColor="@color/colorText" />
 
@@ -360,6 +366,7 @@
                     android:layout_height="wrap_content"
                     android:text="0%"
                     android:layout_marginLeft="16dp"
+                    android:textSize="@dimen/text_size"
                     android:textColor="@color/colorText"/>
 
                 <TextView
@@ -368,9 +375,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="100%"
+                    android:textSize="@dimen/text_size"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="16dp"
-                    android:textColor="@color/colorText"/>
+                    android:textColor="#dddddd"/>
 
                 <SeekBar
                     android:id="@+id/brightness_seekbar"
@@ -378,7 +386,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginRight="48dp"
                     android:layout_marginLeft="16dp"
                     android:progressDrawable="@drawable/progress_dr"
                     android:splitTrack="false"
@@ -418,6 +426,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Notifications"
+                    android:textSize="@dimen/text_size"
                     android:textColor="@color/colorText"/>
 
                 <View
@@ -434,7 +443,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="287"
-            android:background="#1B2126">
+            android:background="#1B2126"
+            android:id="@+id/recyclerview">
 
         </android.support.v7.widget.RecyclerView>
 
@@ -466,7 +476,7 @@
                     <Button
                         android:id="@+id/bt_tmp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_centerInParent="true"
                         android:text="Add more"
                         android:textAllCaps="false"
@@ -474,14 +484,16 @@
 
                     <Button
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_marginTop="1dp"
-                        android:layout_marginLeft="1dp"
+                        android:layout_marginLeft="0.2dp"
                         android:text="Add more"
+                        android:textSize="@dimen/text_size"
                         android:textColor="@color/colorText"
                         android:textAllCaps="false"
                         android:background="@drawable/button_bg"
-                        android:id="@+id/bt_add_more" />
+                        android:id="@+id/bt_add_more"
+                        android:onClick="clickAddMore"/>
                 </RelativeLayout>
 
             </RelativeLayout>
