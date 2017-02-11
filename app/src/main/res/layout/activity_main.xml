@@ -67,7 +67,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
 
-                ProgressWheel:pwBarColor="#40ff00"
+                ProgressWheel:pwBarColor="#27C95C"
                 ProgressWheel:pwBarWidth="5dp"
 
                 ProgressWheel:pwPercent="88"

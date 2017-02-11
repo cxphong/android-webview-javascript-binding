@@ -6,6 +6,7 @@ import android.graphics.Camera;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.GestureDetector;
 import android.view.Gravity;
@@ -21,6 +22,8 @@ import android.view.animation.Transformation;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * @author Igor Kushnarev, Ludovic Roland
@@ -293,11 +296,11 @@ public final class Carousel
 
   private void Calculate3DPosition(CarouselItem<?> child, int diameter, float angleOffset)
   {
+    Log.i(TAG, "Calculate3DPosition: " + angleOffset);
     angleOffset = angleOffset * (float) (Math.PI / 180.0f);
 
     final float x = -(diameter / 2 * android.util.FloatMath.sin(angleOffset)) + diameter / 2 - child.getWidth() / 2;
     final float z = diameter / 2 * (1.0f - android.util.FloatMath.cos(angleOffset));
-    //final float y = -getHeight() / 2 + z * android.util.FloatMath.sin(Carousel.THETA);
     final float y = 0;
 
     child.setItemX(x);
